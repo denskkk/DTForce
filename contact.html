@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Контакти – DTForce</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .bg-dtforce { background-color: #2e3845; }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+  <!-- Хедер -->
+  <header class="bg-dtforce border-top-red shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+      <a href="/" class="flex items-center text-xl font-bold text-white">
+        <img src="images/logo.png" alt="DTForce" class="h-12 mr-3">
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-white">
+        <a href="index.html" class="hover:text-red-400">Головна</a>
+        <a href="#about" class="hover:text-red-400">Про компанію</a>
+        <div class="relative group">
+          <button class="hover:text-red-400 focus:outline-none"><a href="poslugi.html">Послуги</a></button>
+          <div class="absolute left-0 mt-2 w-72 bg-white text-gray-900 border rounded-md shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-10">
+            <a href="pld.html" class="block px-4 py-2 hover:bg-gray-100">Ремонт PLD секції</a>
+            <a href="cr.html" class="block px-4 py-2 hover:bg-gray-100">Ремонт форсунок CR</a>
+            <a href="nasos-forsunki.html" class="block px-4 py-2 hover:bg-gray-100">Ремонт насос форсунок</a>
+            <a href="turbo.html" class="block px-4 py-2 hover:bg-gray-100">Ремонт турбін</a>
+            <a href="tnvd.html" class="block px-4 py-2 hover:bg-gray-100">Ремонт ПНВТ</a>
+            <a href="chiptuning.html" class="block px-4 py-2 hover:bg-gray-100">Чип-тюнінг (ADBLUE, EGR, DPF OFF)</a>
+          </div>
+        </div>
+        <a href="contact.html" class="hover:text-red-400">Контакти</a>
+        <button class="hover:text-red-400">UA</button>
+      </nav>
+
+      <button id="menuToggle" class="md:hidden text-white hover:text-red-400 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 bg-dtforce text-white">
+      <a href="/" class="block py-2 border-b border-gray-600">Головна</a>
+      <a href="#about" class="block py-2 border-b border-gray-600">Про компанію</a>
+      <div class="py-2 border-b border-gray-600">
+        <span class="font-semibold">Послуги:</span>
+        <div class="ml-4 space-y-1 mt-1">
+          <a href="pld.html" class="block">• Ремонт PLD секції</a>
+          <a href="cr.html" class="block">• Ремонт форсунок CR</a>
+          <a href="nasos-forsunki.html" class="block">• Ремонт насос форсунок</a>
+          <a href="turbo.html" class="block">• Ремонт турбін</a>
+          <a href="tnvd.html" class="block">• Ремонт ПНВТ</a>
+          <a href="chiptuning.html" class="block">• Чип-тюнінг</a>
+        </div>
+      </div>
+      <a href="contact.html" class="block py-2 border-b border-gray-600">Контакти</a>
+      <button class="mt-2 hover:text-red-400">UA</button>
+    </div>
+  </header>
+
+  <!-- Контакти -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h1 class="text-4xl font-bold text-center mb-10 text-gray-900">Контакти</h1>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">Зв’яжіться з нами</h2>
+          <p class="mb-4">DTForce – сервіс з ремонту дизельного паливного обладнання.</p>
+          <ul class="space-y-3 text-gray-700">
+            <li><strong>📍 Адреса:</strong> вул. Новікова 3, м. Одеса</li>
+            <li><strong>📞 Телефон:</strong> <a href="tel:+380501234567" class="text-red-600 hover:underline">+38 (050) 123-45-67</a></li>
+            <li><strong>📧 Email:</strong> <a href="mailto:info@dtforce.ua" class="text-red-600 hover:underline">info@dtforce.ua</a></li>
+            <li><strong>🕒 Графік:</strong> Пн–Пт: 9:00 – 18:00, Сб: 10:00 – 16:00</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg">
+          <h2 class="text-xl font-semibold mb-4">Надішліть запит</h2>
+          <form action="#" method="POST" class="space-y-4">
+            <div>
+              <label for="name" class="block text-sm font-medium">Ім’я</label>
+              <input type="text" id="name" name="name" required class="w-full mt-1 p-2 border rounded-md">
+            </div>
+            <div>
+              <label for="phone" class="block text-sm font-medium">Телефон</label>
+              <input type="tel" id="phone" name="phone" required class="w-full mt-1 p-2 border rounded-md">
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium">Повідомлення</label>
+              <textarea id="message" name="message" rows="4" class="w-full mt-1 p-2 border rounded-md"></textarea>
+            </div>
+            <button type="submit" class="bg-red-600 text-white px-6 py-2 rounded-md hover:bg-red-700 transition">Надіслати</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Карта -->
+      <div class="mt-16">
+        <h2 class="text-2xl font-semibold mb-4">Ми на карті</h2>
+        <div class="w-full h-80 rounded-lg overflow-hidden shadow-lg">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2748.033336187498!2d30.681104276765772!3d46.4678476659165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c63210276e0161%3A0x5ab1f94c47708456!2z0YPQuy4g0J3QvtCy0LjQutC-0LLQsCwgMywg0J7QtNC10YHRgdCwLCDQntC00LXRgdGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCA2NTAwMA!5e0!3m2!1sru!2sua!4v1746554190077!5m2!1sru!2sua"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+      <!-- Соцсети -->
+      <div class="mt-12 text-center">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">Ми в соцмережах</h3>
+        <div class="flex justify-center space-x-6 text-2xl text-gray-600">
+          <a href="https://instagram.com/твой_акаунт" target="_blank" class="hover:text-red-600" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="viber://chat?number=+380501234567" target="_blank" class="hover:text-purple-600" aria-label="Viber">
+            <i class="fab fa-viber"></i>
+          </a>
+          <a href="https://t.me/твой_нік" target="_blank" class="hover:text-blue-500" aria-label="Telegram">
+            <i class="fab fa-telegram"></i>
+          </a>
+          <a href="https://wa.me/380501234567" target="_blank" class="hover:text-green-500" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="https://tiktok.com/@твой_нік" target="_blank" class="hover:text-black" aria-label="TikTok">
+            <i class="fab fa-tiktok"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const toggle = document.getElementById("menuToggle");
+    const menu = document.getElementById("mobileMenu");
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  </script>
+<!-- Добавьте этот код в нужное место вашего HTML -->
+<button id="scrollToTopBtn" class="fixed bottom-20 right-6 bg-red-600 text-white p-3 rounded-full shadow-lg hover:bg-red-700 transition hidden z-50">
+  <!-- Иконка стрелки вверх -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+  </svg>
+</button>
+
+<script>
+  const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+  // Показать кнопку при прокрутке вниз
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      scrollToTopBtn.classList.remove("hidden");
+    } else {
+      scrollToTopBtn.classList.add("hidden");
+    }
+  });
+
+  // Прокрутка наверх при нажатии на кнопку
+  scrollToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+</script>
+<!-- Нижнє мобільне меню (лише для мобільних) -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-red-600 text-white border-t border-gray-200">
+  <div class="flex justify-around items-center text-xs font-semibold py-2">
+
+    <!-- Дзвінок -->
+    <a href="tel:+380XXXXXXXXX" class="flex flex-col items-center hover:text-yellow-300">
+      <!-- Іконка телефону -->
+      <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M3 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H5v2a9 9 0 009 9h2a2 2 0 002-2v-2a2 2 0 00-2-2h-1a2 2 0 01-2-2V5a2 2 0 00-2-2H5z" />
+      </svg>
+      Дзвінок
+    </a>
+
+    <!-- Послуги -->
+    <a href="#services" class="flex flex-col items-center hover:text-yellow-300">
+      <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      Послуги
+    </a>
+
+    <!-- Карта -->
+    <a href="https://maps.app.goo.gl/NcXgjJG5iKZ6oLbW9" target="_blank" class="flex flex-col items-center hover:text-yellow-300">
+      <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M9 20l-5.447-2.724A2 2 0 013 15.382V5a2 2 0 012-2h14a2 2 0 012 2v10.382a2 2 0 01-1.553 1.894L15 20l-3-1.5L9 20z" />
+      </svg>
+      Карта
+    </a>
+
+  </div>
+</div>
+
+</body>
+</html>
