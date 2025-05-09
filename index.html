@@ -97,7 +97,146 @@
     </div>
     
   </section>
-  
+  <!-- Фільтр у секції "Наші послуги" -->
+<section class="bg-gradient-to-r from-white via-gray-50 to-white py-12 shadow-inner">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-8">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-gray-800">
+        <span class="inline-block align-middle mr-2"></span>
+        Оберіть марку, модель та рік авто
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center justify-center">
+
+      <!-- Марка авто -->
+      <div class="relative">
+        <select id="brand" class="w-full text-gray-800 border border-gray-300 rounded-lg px-4 py-3 shadow focus:outline-none focus:ring-2 focus:ring-red-500">
+          <option value="">Марка авто</option>
+          <option value="DAF">DAF</option>
+          <option value="IVECO">IVECO</option>
+          <option value="MAN">MAN</option>
+          <option value="MB">MB</option>
+          <option value="RENAULT">RENAULT</option>
+          <option value="SCANIA">SCANIA</option>
+          <option value="VOLVO">VOLVO</option>
+        </select>
+      </div>
+
+      <!-- Модель авто -->
+      <div class="relative">
+        <select id="model" class="w-full text-gray-800 border border-gray-300 rounded-lg px-4 py-3 shadow focus:outline-none focus:ring-2 focus:ring-red-500">
+          <option value="">Модель</option>
+        </select>
+      </div>
+
+      <!-- Рік авто -->
+      <div class="relative">
+        <select id="year" class="w-full text-gray-800 border border-gray-300 rounded-lg px-4 py-3 shadow focus:outline-none focus:ring-2 focus:ring-red-500">
+          <option value="">Рік</option>
+          <script>
+            for (let y = new Date().getFullYear(); y >= 1990; y--) {
+              document.write(`<option value="${y}">${y}</option>`);
+            }
+          </script>
+        </select>
+      </div>
+
+      <!-- Кнопка переходу -->
+      <div class="text-center">
+        <button id="searchBtn" class="w-full bg-red-600 text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-red-700 transition duration-200">
+          НУЖЕН РЕМОНТ
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const modelSelect = document.getElementById("model");
+  const brandSelect = document.getElementById("brand");
+  const redirectBtn = document.getElementById("searchBtn");
+
+  const modelsByBrand = {
+    DAF: ["105", "85", "95"],
+    IVECO: ["CURSOR", "EUROTECH", "STRALIS"],
+    MAN: ["TGA", "TGX", "TGE"],
+    MB: ["ACTROS", "ATEGO", "AXOR", "VARIO"],
+    RENAULT: ["MAGNUM", "PREMIUM", "MAGNUM DXI", "MAGNUM DCI", "PREMIUM DXI"],
+    SCANIA: ["Усі моделі"],
+    VOLVO: ["F", "FH", "FL", "FM"]
+  };
+
+  brandSelect.addEventListener("change", function () {
+    const selected = this.value;
+    modelSelect.innerHTML = '<option value="">Модель</option>';
+    if (modelsByBrand[selected]) {
+      modelsByBrand[selected].forEach(model => {
+        const option = document.createElement("option");
+        option.value = model;
+        option.textContent = model;
+        modelSelect.appendChild(option);
+      });
+    }
+  });
+
+  redirectBtn.addEventListener("click", () => {
+    const brand = brandSelect.value;
+    const model = modelSelect.value;
+
+    const crBrands = ["DAF", "VOLVO", "RENAULT"];
+    const pldBrands = ["MAN", "MB"];
+    const tnvdBrands = ["IVECO", "SCANIA"];
+
+    let url = "";
+    if (crBrands.includes(brand)) url = "cr.html";
+    else if (pldBrands.includes(brand)) url = "pld.html";
+    else if (tnvdBrands.includes(brand)) url = "tnvd.html";
+    else url = "pld.html";
+
+    window.location.href = url;
+  });
+</script>
+<section class="bg-white py-10">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+      
+      <!-- Картка 1 -->
+      <a href="nasos-forsunki.html" class="block">
+        <div class="bg-red-600 text-white rounded-lg p-6 flex flex-col items-center hover:shadow-xl transition">
+          <img src="images/nasosfors.png" alt="Насос-форсунка" class="h-24 object-contain mb-4" />
+          <h3 class="text-base font-bold text-center uppercase">Ремонт насос-форсунок</h3>
+        </div>
+      </a>
+
+      <!-- Картка 2 -->
+      <a href="pld.html" class="block">
+        <div class="bg-rose-300 text-black rounded-lg p-6 flex flex-col items-center hover:shadow-xl transition">
+          <img src="images/pld.png" alt="PLD секція" class="h-24 object-contain mb-4" />
+          <h3 class="text-base font-bold text-center uppercase">Ремонт насос-секцій</h3>
+        </div>
+      </a>
+
+      <!-- Картка 3 -->
+      <a href="cr.html" class="block">
+        <div class="bg-rose-200 text-black rounded-lg p-6 flex flex-col items-center hover:shadow-xl transition">
+          <img src="images/cr.png" alt="Форсунки CR" class="h-24 object-contain mb-4" />
+          <h3 class="text-base font-bold text-center uppercase">Ремонт Common Rail</h3>
+        </div>
+      </a>
+
+      <!-- Картка 4 -->
+      <a href="tnvd.html" class="block">
+        <div class="bg-rose-100 text-black rounded-lg p-6 flex flex-col items-center hover:shadow-xl transition">
+          <img src="images/pnvt.png" alt="ПНВТ" class="h-24 object-contain mb-4" />
+          <h3 class="text-base font-bold text-center uppercase">Ремонт ТНВД</h3>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
   <!-- Блок с квадратиками -->
   <section class="bg-gray-100 py-12">
     <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
@@ -124,69 +263,6 @@
   </section>
   
 
-<!-- Наші послуги -->
-<section id="services" class="bg-white py-16">
-  <div class="max-w-7xl mx-auto px-4 text-center">
-    <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-10">🔧 НАШІ ПОСЛУГИ</h2>
-
-    <!-- Сітка карточок -->
-    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-
-      <a href="pld.html" class="block">
-        <div class="bg-red-600 text-white rounded-xl shadow-md hover:shadow-xl transition p-6 flex flex-col justify-between items-center min-h-[220px]">
-          <img src="images/pld.png" alt="PLD секція" class="h-20 object-contain mb-4">
-          <h3 class="text-lg font-semibold text-center">Ремонт PLD секції</h3>
-        </div>
-      </a>
-      
-
-      <!-- Карточка 2 -->
-      <a href="cr.html" class="block">
-        <div class="bg-red-400 text-white rounded-xl shadow-md hover:shadow-xl transition p-6 flex flex-col justify-between items-center min-h-[220px]        ">
-          <img src="images/cr.png" alt="Форсунки CR" class="h-24 mb-4 object-contain">
-          <h3 class="text-lg font-semibold text-center">Ремонт форсунок CR</h3>
-        </div>
-      </a>
-
-      <!-- Карточка 3 -->
-      <a href="nasos-forsunki.html" class="block">
-        <div class="bg-rose-200 text-gray-800 rounded-xl shadow-md hover:shadow-xl transition p-6 flex flex-col justify-between items-center min-h-[220px]        ">
-          <img src="images/nasosfors.png" alt="Насос-форсунка" class="h-24 mb-4 object-contain">
-          <h3 class="text-lg font-semibold text-center">Ремонт насос форсунки</h3>
-        </div>
-      </a>
-
-      <!-- Карточка 4 -->
-      <a href="turbo.html" class="block">
-        <div class="bg-gray-800 text-white rounded-xl shadow-md hover:shadow-xl transition p-6 flex flex-col items-center min-h-[220px]">
-          <img src="images/turnini.png" alt="Турбіна" class="h-24 mb-4 object-contain">
-          <h3 class="text-lg font-semibold text-center">Ремонт турбін</h3>
-        </div>
-      </a>
-
-      <!-- Карточка 5 -->
-      <a href="tnvd.html" class="block">
-        <div class="bg-blue-800 text-white rounded-xl shadow-md hover:shadow-xl transition p-6 flex flex-col justify-between items-center min-h-[220px]        ">
-          <img src="images/pnvt.png" alt="ПНВТ" class="h-24 mb-4 object-contain">
-          <h3 class="text-lg font-semibold text-center">Ремонт ПНВТ</h3>
-        </div>
-      </a>
-
-      <!-- Карточка 6 -->
-      <a href="chiptuning.html" class="block">
-        <div class="bg-gray-200 text-gray-800 rounded-xl shadow-md hover:shadow-xl transition p-6 flex flex-col justify-between items-center min-h-[220px]        ">
-          <img src="images/chiptuning.png" alt="Чип-тюнінг" class="h-24 mb-4 object-contain">
-          <h3 class="text-lg font-semibold text-center leading-snug">
-            Чип-тюнінг
-          </h3>
-        </div>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-  
     
  <!-- Наші майстри за справою -->
 <section class="bg-gray-100 py-20">
