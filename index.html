@@ -9,18 +9,6 @@
     /* Кастомные цвета */
     .bg-dtforce { background-color: #2e3845; }
   </style>
-  <!-- Binotel CallTracking -->
-<script type="text/javascript">
-    (function(d, w, s) {
-      var widgetHash = 'i05h636bzd90wtswsdjj'; // заміни на свій унікальний hash
-      var ctw = d.createElement(s);
-      ctw.type = 'text/javascript';
-      ctw.async = true;
-      ctw.src = '//widgets.binotel.com/calltracking/widgets/' + widgetHash + '.js';
-      var sn = d.getElementsByTagName(s)[0];
-      sn.parentNode.insertBefore(ctw, sn);
-    })(document, window, 'script');
-  </script>
 
 </head>
 <body class="font-sans text-white">
@@ -727,6 +715,12 @@
   </div>
 </div>
 
-
+<script type="text/javascript">
+  (function(d, w, s) {
+	var widgetHash = 'kaetj667yfpludj8qk4b', gcw = d.createElement(s); gcw.type = 'text/javascript'; gcw.async = true;
+	gcw.src = '//widgets.binotel.com/getcall/widgets/'+ widgetHash +'.js';
+	var sn = d.getElementsByTagName(s)[0]; sn.parentNode.insertBefore(gcw, sn);
+  })(document, window, 'script');
+</script> 
 </body>
 </html>
