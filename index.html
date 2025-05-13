@@ -259,12 +259,10 @@
       </div>
     </div>
   
-    <!-- Кнопка -->
     <div class="text-center mt-10">
-       <button class="call-button" onclick="window.location.href='tel:+380671916336'">
-    📞 Подзвонити
-  </button>
-
+      <button class="call-button" onclick="window.location.href='tel:+380671916336'" data-binotel-phone>
+        📞 Подзвонити
+      </button>
     </div>
   </section>
   
@@ -604,14 +602,15 @@
       <!-- Блок 3: Контакти -->
       <div>
         <h3 class="text-lg font-semibold mb-4">Контакти</h3>
-        <ul class="space-y-2 text-gray-300 text-sm">
-          <li>📍 м. Одеса, вул. Новікова, 3</li>
-          <li>📞 <a href="tel:+380XXXXXXXXX" class="hover:text-red-400">+38 (050) 123-45-67</a></li>
-          <li>📧 <a href="mailto:dtforce@example.com" class="hover:text-red-400">dtforce@example.com</a></li>
-        </ul>
-        <a href="tel:+380XXXXXXXXX" class="mt-6 inline-block bg-red-600 hover:bg-red-700 transition text-white px-6 py-3 rounded-full font-semibold text-sm">
-          📞 Записатися на ремонт
-        </a>
+          <ul class="space-y-2 text-gray-300 text-sm">
+    <li>📍 м. Одеса, вул. Новікова, 3</li>
+    <li>📞 <a href="#" class="hover:text-red-400" data-binotel-phone>+38 (067) 191-63-36</a></li>
+    <li>📧 <a href="mailto:dtforce@example.com" class="hover:text-red-400">dtforce@example.com</a></li>
+  </ul>
+  <a href="#" class="mt-6 inline-block bg-red-600 hover:bg-red-700 transition text-white px-6 py-3 rounded-full font-semibold text-sm" data-binotel-phone>
+    📞 Записатися на ремонт
+  </a>
+
       </div>
   
     </div>
@@ -685,9 +684,8 @@
 <!-- Нижнє мобільне меню -->
 <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-red-600 text-white border-t border-gray-200">
   <div class="flex justify-around items-center text-sm font-semibold py-2">
-
     <!-- Дзвінок -->
-    <a href="tel:+380XXXXXXXXX" class="flex flex-col items-center hover:text-yellow-300">
+    <a href="#" class="flex flex-col items-center hover:text-yellow-300" data-binotel-phone>
       <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round"
               d="M3 5a2 2 0 012-2h1.586a1 1 0 01.707.293l2.121 2.121a1 1 0 01.293.707V8a1 1 0 01-.293.707l-1.586 1.586a16 16 0 006.586 6.586l1.586-1.586A1 1 0 0116 14h1.879a1 1 0 01.707.293l2.121 2.121a1 1 0 01.293.707V19a2 2 0 01-2 2h-1C9.163 21 3 14.837 3 7V5z" />
@@ -715,12 +713,46 @@
   </div>
 </div>
 
+<!-- Обновленный код Binotel Calltracking с настройками -->
 <script type="text/javascript">
   (function(d, w, s) {
-	var widgetHash = 'kaetj667yfpludj8qk4b', gcw = d.createElement(s); gcw.type = 'text/javascript'; gcw.async = true;
-	gcw.src = '//widgets.binotel.com/getcall/widgets/'+ widgetHash +'.js';
-	var sn = d.getElementsByTagName(s)[0]; sn.parentNode.insertBefore(gcw, sn);
+    var widgetHash = 'i05h636bzd90wtswsdjj', ctw = d.createElement(s); ctw.type = 'text/javascript'; ctw.async = true;
+    ctw.src = '//widgets.binotel.com/calltracking/widgets/'+ widgetHash +'.js';
+    var sn = d.getElementsByTagName(s)[0]; sn.parentNode.insertBefore(ctw, sn);
   })(document, window, 'script');
-</script> 
+</script>
+
+<script>
+  document.addEventListener('binotelCalltrackingReady', function() {
+    // Применяем подстановку номеров ко всем элементам с атрибутом data-binotel-phone
+    var phoneElements = document.querySelectorAll('[data-binotel-phone]');
+    for (var i = 0; i < phoneElements.length; i++) {
+      var element = phoneElements[i];
+      if (element.tagName === 'A') {
+        // Для ссылок устанавливаем href
+        element.href = 'tel:' + BinotelCallTracking.getPhoneNumber();
+        if (!element.textContent.includes('Записатися') && !element.textContent.includes('Дзвінок')) {
+          element.textContent = BinotelCallTracking.getPhoneNumber(true); // Форматированный номер для отображения
+        }
+      } else {
+        // Для кнопок и других элементов обновляем только обработчик события
+        element.onclick = function() {
+          window.location.href = 'tel:' + BinotelCallTracking.getPhoneNumber();
+          return false;
+        };
+      }
+    }
+  });
+</script>
+
+<!-- GetCall widget (оставляем без изменений) -->
+<script type="text/javascript">
+  (function(d, w, s) {
+    var widgetHash = 'kaetj667yfpludj8qk4b', gcw = d.createElement(s); gcw.type = 'text/javascript'; gcw.async = true;
+    gcw.src = '//widgets.binotel.com/getcall/widgets/'+ widgetHash +'.js';
+    var sn = d.getElementsByTagName(s)[0]; sn.parentNode.insertBefore(gcw, sn);
+  })(document, window, 'script');
+</script>
+
 </body>
 </html>
