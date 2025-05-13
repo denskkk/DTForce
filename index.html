@@ -9,6 +9,18 @@
     /* Кастомные цвета */
     .bg-dtforce { background-color: #2e3845; }
   </style>
+  <script type="text/javascript">
+(function(d, w, s) {
+  var widgetHash = 'i05h636bzd90wtswsdjj',
+      ctw = d.createElement(s);
+  ctw.type = 'text/javascript';
+  ctw.async = true;
+  ctw.src = '//widgets.binotel.com/calltracking/widgets/' + widgetHash + '.js';
+  var sn = d.getElementsByTagName(s)[0];
+  sn.parentNode.insertBefore(ctw, sn);
+})(document, window, 'script');
+</script>
+
 </head>
 <body class="font-sans text-white">
 
@@ -260,10 +272,9 @@
   
     <!-- Кнопка -->
     <div class="text-center mt-10">
-     <a href="#" class="inline-block bg-red-600 text-white text-lg font-semibold px-8 py-4 rounded-full shadow hover:bg-red-700 transition ct-phone">
-  ПОДЗВОНИТИ
-</a>
-
+      <a href="#" data-binotel-widget-phone class="inline-block bg-red-600 text-white text-lg font-semibold px-8 py-4 rounded-full shadow hover:bg-red-700 transition">
+    ПОДЗВОНИТИ
+  </a>
     </div>
   </section>
   
@@ -686,7 +697,7 @@
   <div class="flex justify-around items-center text-sm font-semibold py-2">
 
     <!-- Дзвінок -->
-    <a href="tel:+380XXXXXXXXX" class="flex flex-col items-center hover:text-yellow-300">
+<a href="#" data-binotel-widget-phone class="flex flex-col items-center hover:text-yellow-300">
       <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round"
               d="M3 5a2 2 0 012-2h1.586a1 1 0 01.707.293l2.121 2.121a1 1 0 01.293.707V8a1 1 0 01-.293.707l-1.586 1.586a16 16 0 006.586 6.586l1.586-1.586A1 1 0 0116 14h1.879a1 1 0 01.707.293l2.121 2.121a1 1 0 01.293.707V19a2 2 0 01-2 2h-1C9.163 21 3 14.837 3 7V5z" />
@@ -714,16 +725,6 @@
   </div>
 </div>
 
-<!-- Binotel Calltracking Script -->
-<script type="text/javascript">
-  (function(d, w, s) {
-    var widgetHash = 'i05h636bzd90wtswsdjj', ctw = d.createElement(s);
-    ctw.type = 'text/javascript'; ctw.async = true;
-    ctw.src = '//widgets.binotel.com/calltracking/widgets/' + widgetHash + '.js';
-    var sn = d.getElementsByTagName(s)[0];
-    sn.parentNode.insertBefore(ctw, sn);
-  })(document, window, 'script');
-</script>
 
 </body>
 </html>
