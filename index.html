@@ -3,18 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DTForce – Дизель сервіс</title>
+  <title>DTForce – Дизель сервіс | Ремонт ТНВД, форсунок, турбін</title>
+  <meta name="description" content="DTForce – професійний ремонт ТНВД, форсунок, турбін вантажних авто. Гарантія до 12 місяців. Працюємо по всій Україні.">
+  <meta name="keywords" content="ремонт ТНВД, ремонт форсунок, ремонт турбін, дизель сервіс, діагностика дизельних систем, DTForce">
+  <meta property="og:title" content="DTForce – Дизель сервіс | Ремонт ТНВД, форсунок, турбін">
+  <meta property="og:description" content="Професійний ремонт дизельних систем з гарантією до 12 місяців. Працюємо по всій Україні.">
+  <meta property="og:image" content="images/banner.png">
+  <meta property="og:url" content="https://dtforce.ua">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DTForce – Дизель сервіс | Ремонт ТНВД, форсунок, турбін">
+  <meta name="twitter:description" content="Професійний ремонт дизельних систем з гарантією до 12 місяців. Працюємо по всій Україні.">
+  <meta name="twitter:image" content="images/banner.png">
+  <link rel="canonical" href="https://dtforce.ua">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     /* Кастомные цвета */
     .bg-dtforce { background-color: #2e3845; }
+    @keyframes scroll {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-scroll {
+      animation: scroll 30s linear infinite;
+    }
   </style>
- <script type="text/javascript">
-    (function(d, w, s) {
-      var widgetHash = 'i05h636bzd90wtswsdjj', ctw = d.createElement(s); ctw.type = 'text/javascript'; ctw.async = true;
-      ctw.src = '//widgets.binotel.com/calltracking/widgets/' + widgetHash + '.js';
-      var sn = d.getElementsByTagName(s)[0]; sn.parentNode.insertBefore(ctw, sn);
-    })(document, window, 'script');
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "DTForce – Дизель сервіс",
+    "description": "Професійний ремонт ТНВД, форсунок, турбін вантажних авто. Гарантія до 12 місяців.",
+    "image": "https://dtforce.ua/images/banner.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "вул. Новікова, 3",
+      "addressLocality": "Одеса",
+      "addressCountry": "UA"
+    },
+    "telephone": "+380671916336",
+    "email": "dtforce@example.com",
+    "url": "https://dtforce.ua",
+    "sameAs": [
+      "https://www.facebook.com/dtforce",
+      "https://www.instagram.com/dtforce"
+    ]
+  }
   </script>
 </head>
 <body class="font-sans text-white">
@@ -22,80 +57,39 @@
   <!-- Хедер -->
   <header class="bg-dtforce border-top-red shadow-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
-
-      <!-- Логотип -->
       <a href="index.html" class="flex items-center text-xl font-bold text-white">
-        <img src="images/logo.png" alt="DTForce" class="h-12 mr-3">
-        <div class="text-left leading-tight">
-         
-        </div>
+        <img src="images/logo.png" alt="DTForce – Дизель сервіс" class="h-12 mr-3">
       </a>
-
-      <!-- Навигация -->
       <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
         <a href="index.html" class="hover:text-red-400">Головна</a>
         <a href="#about" class="hover:text-red-400">Про компанію</a>
-        <a href="blog.html">Блог</a>
-
-
-        <!-- Dropdown -->
-        <div class="relative group">
-          <button class="hover:text-red-400 focus:outline-none"><a href="poslugi.html">Послуги</a></button>
-          <div class="absolute left-0 mt-2 w-72 bg-white text-gray-900 border rounded-md shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-10">
-            <a href="pld.html" class="block px-4 py-2 hover:bg-gray-100">Ремонт PLD секції</a>
-            <a href="cr.html" class="block px-4 py-2 hover:bg-gray-100">Ремонт форсунок CR</a>
-            <a href="nasos-forsunki.html" class="block px-4 py-2 hover:bg-gray-100">Ремонт насос форсунок</a>
-            <a href="turbo.html" class="block px-4 py-2 hover:bg-gray-100">Ремонт турбін</a>
-            <a href="tnvd.html" class="block px-4 py-2 hover:bg-gray-100">Ремонт ПНВТ</a>
-            <a href="chiptuning.html" class="block px-4 py-2 hover:bg-gray-100">Чип-тюнінг (ADBLUE, EGR, DPF OFF)</a>
-          </div>
-        </div>
-
+        <a href="blog.html" class="hover:text-red-400">Блог</a>
+        <a href="poslugi.html" class="hover:text-red-400">Послуги</a>
         <a href="contact.html" class="hover:text-red-400">Контакти</a>
         <button class="hover:text-red-400">UA</button>
       </nav>
-
-      <!-- Мобильное меню (бургер) -->
       <button id="menuToggle" class="md:hidden text-white hover:text-red-400 focus:outline-none">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
     </div>
-
-    <!-- Мобильное меню -->
     <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 bg-dtforce text-white">
-      <a href="/" class="block py-2 border-b border-gray-600">Головна</a>
+      <a href="index.html" class="block py-2 border-b border-gray-600">Головна</a>
       <a href="#about" class="block py-2 border-b border-gray-600">Про компанію</a>
-      <a href="blog.html">Блог</a><!-- New Blog Link -->
-
-      <div class="py-2 border-b border-gray-600">
-        <span class="font-semibold">Послуги:</span>
-        <div class="ml-4 space-y-1 mt-1">
-          <a href="pld.html" class="block">• Ремонт PLD секції</a>
-          <a href="cr.html" class="block">• Ремонт форсунок CR</a>
-          <a href="nasos-forsunki.html" class="block">• Ремонт насос форсунок</a>
-          <a href="turbo.html" class="block">• Ремонт турбін</a>
-          <a href="tnvd.html" class="block">• Ремонт ПНВТ</a>
-          <a href="chiptuning.html" class="block">• Чип-тюнінг</a>
-        </div>
-      </div>
+      <a href="blog.html" class="block py-2 border-b border-gray-600">Блог</a>
+      <a href="poslugi.html" class="block py-2 border-b border-gray-600">Послуги</a>
       <a href="contact.html" class="block py-2 border-b border-gray-600">Контакти</a>
       <button class="mt-2 hover:text-red-400">UA</button>
     </div>
   </header>
 
   <!-- Hero Section -->
-<section class="bg-white py-16">
+  <section class="bg-white py-16">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12">
-  
-      <!-- Картинка слева -->
       <div class="w-full lg:w-1/2">
-        <img src="images/banner.png" alt="Ремонт ТНВД" class="rounded-xl shadow-xl w-[800px] max-w-full h-auto object-cover" />
+        <img src="images/banner.png" alt="Ремонт ТНВД, форсунок, турбін" class="rounded-xl shadow-xl w-[800px] max-w-full h-auto object-cover" loading="lazy" />
       </div>
-  
-      <!-- Текст справа -->
       <div class="w-full lg:w-1/2 text-center lg:text-left">
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-800 leading-tight">
           <span class="text-red-600">DTForce</span> – <br />
@@ -106,9 +100,28 @@
         </p>
       </div>
     </div>
-    
   </section>
-  <!-- Фільтр у секції "Наші послуги" -->
+
+  <!-- Секция с марками авто -->
+  <section class="bg-gray-50 py-20">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-10">
+        Виконуємо ремонт ПНВТ, Форсунок, Турбін для марок автомобілів
+      </h2>
+      <div class="overflow-hidden">
+        <div class="flex animate-scroll whitespace-nowrap gap-12 items-center">
+          <img src="brands/man.png" alt="MAN" class="h-12 w-auto inline-block" />
+          <img src="brands/daf.png" alt="DAF" class="h-12 w-auto inline-block" />
+          <img src="brands/volvo.png" alt="Volvo" class="h-12 w-auto inline-block" />
+          <img src="brands/renault.png" alt="Renault" class="h-12 w-auto inline-block" />
+          <img src="brands/iveco.png" alt="IVECO" class="h-12 w-auto inline-block" />
+          <img src="brands/mercedes.png" alt="Mercedes-Benz" class="h-12 w-auto inline-block" />
+          <img src="brands/scania.png" alt="Scania" class="h-12 w-auto inline-block" />
+        </div>
+      </div>
+    </div>
+  </section>
+
 <section class="bg-gradient-to-r from-white via-gray-50 to-white py-12 shadow-inner">
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center mb-8">
@@ -426,38 +439,7 @@
   
     </div>
   </section>
-  
 
-  <!-- Секция с марками авто -->
-<section class="bg-gray-50 py-20">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-10">
-        Виконуємо ремонт ПНВТ, Форсунок, Турбін для марок автомобілів
-      </h2>
-  
-      <!-- Логотипы брендов с автопрокруткой -->
-      <div class="overflow-hidden">
-        <div class="flex animate-scroll whitespace-nowrap gap-12 items-center">
-  
-          <img src="brands/man.png" alt="MAN" class="h-12 w-auto inline-block" />
-          <img src="brands/daf.png" alt="DAF" class="h-12 w-auto inline-block" />
-          <img src="brands/volvo.png" alt="Volvo" class="h-12 w-auto inline-block" />
-          <img src="brands/renault.png" alt="Renault" class="h-12 w-auto inline-block" />
-          <img src="brands/iveco.png" alt="IVECO" class="h-12 w-auto inline-block" />
-          <img src="brands/mercedes.png" alt="Mercedes-Benz" class="h-12 w-auto inline-block" />
-          <img src="brands/scania.png" alt="Scania" class="h-12 w-auto inline-block" />
-          <img src="brands/isuzu.png" alt="Isuzu" class="h-12 w-auto inline-block" />
-  
-          <!-- Повтор логотипов для бесконечного эффекта -->
-          <img src="brands/man.png" alt="MAN" class="h-12 w-auto inline-block" />
-          <img src="brands/daf.png" alt="DAF" class="h-12 w-auto inline-block" />
-          <img src="brands/volvo.png" alt="Volvo" class="h-12 w-auto inline-block" />
-          <img src="brands/renault.png" alt="Renault" class="h-12 w-auto inline-block" />
-        </div>
-      </div>
-    </div>
-  </section>
-  
   <section id="blog" class="bg-gray-100 py-16">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">
